@@ -1,0 +1,20 @@
+// mat-side-nav-content pegue a tela inteira
+mat-sidenav-content {
+  min-height: 100vh;
+}
+
+mat-sidenav {
+  width: 280px;
+}
+
+mat-toolbar {
+  height: 48px;
+}
+
+.petstore__name {
+  padding: 15px;
+}
+
+.btn__close-menu {
+  margin-left: 230px;
+}
