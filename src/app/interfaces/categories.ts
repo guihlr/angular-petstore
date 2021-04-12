@@ -2,7 +2,7 @@ export interface Categories {
     id: string;
     name: string;
     description: string;
-    subcategories: Array<String>;
+    subcategories: Array<string>;
     url: string;
 }
 

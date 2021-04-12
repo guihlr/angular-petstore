@@ -7,8 +7,8 @@ export interface Product {
     featured_image: string;
     images: Array<String>;
     videos: Array<String>;
-    rating_stars: number;
-    rating_count: number;
+    raging_stars: number;
+    raging_count: number;
     installment_available: boolean;
     installment_count: number;
     featured: boolean;
