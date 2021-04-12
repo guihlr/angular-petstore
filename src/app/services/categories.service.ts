@@ -23,7 +23,7 @@ export class CategoriesService {
           observer.error('error_on_get_categories');
           observer.complete();
         }
-      )
+      );
     });
   }
 }

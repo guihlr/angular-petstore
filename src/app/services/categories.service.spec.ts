@@ -24,7 +24,7 @@ describe('CategoriesService', () => {
     service.getCategories().subscribe(categories => {
       expect(categories.length).toEqual(2);
       expect(categories[0].name).toEqual('Ração');
-    })
+    });
 
     // Vamos conferir qual url foi chamada pelo metodo getCategories()
     const req = httpTestingController.expectOne('https://petshop-sp.ue.r.appspot.com/v1/categories');
@@ -36,7 +36,7 @@ describe('CategoriesService', () => {
     const categories: Array<Categories> = [
       { id: 'dasdasd', name: 'Ração', description: '', subcategories: ['ração seca'], url: '' },
       { id: 'dasdasd', name: 'Brinquedos', description: '', subcategories: ['pelucia'], url: '' }
-    ]
+    ];
     req.flush(categories);
 
   });

@@ -9,11 +9,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
+import { CategoriesFeaturedComponent } from './components/categories-featured/categories-featured.component';
+import { MatCardModule } from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    CategoriesFeaturedComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatToolbarModule,
     HttpClientModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

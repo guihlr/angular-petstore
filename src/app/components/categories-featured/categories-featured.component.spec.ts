@@ -1,17 +1,16 @@
-import { CategoriesServiceMock } from 'src/app/mocks/categories-mocks';
 import { CategoriesService } from 'src/app/services/categories.service';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashboardComponent } from './dashboard.component';
+import { CategoriesFeaturedComponent } from './categories-featured.component';
+import { CategoriesServiceMock } from 'src/app/mocks/categories-mocks';
 
-
-describe('DashboardComponent', () => {
-  let component: DashboardComponent;
-  let fixture: ComponentFixture<DashboardComponent>;
+describe('CategoriesFeaturedComponent', () => {
+  let component: CategoriesFeaturedComponent;
+  let fixture: ComponentFixture<CategoriesFeaturedComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DashboardComponent],
+      declarations: [CategoriesFeaturedComponent],
       providers: [
         {
           provide: CategoriesService,
@@ -23,7 +22,7 @@ describe('DashboardComponent', () => {
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DashboardComponent);
+    fixture = TestBed.createComponent(CategoriesFeaturedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
