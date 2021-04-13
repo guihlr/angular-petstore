@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { MatIcon } from '@angular/material/icon';
 import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
-import { MatToolbar } from '@angular/material/toolbar';
+import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MockComponents } from 'ng-mocks';
 import { AppComponent } from './app.component';
@@ -11,7 +11,7 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule,
+        RouterTestingModule
       ],
       declarations: [
         AppComponent,
@@ -20,6 +20,7 @@ describe('AppComponent', () => {
           MatSidenav,
           MatSidenavContent,
           MatSidenavContainer,
+          MatToolbarRow,
           MatIcon
         )
       ],

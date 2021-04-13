@@ -7,12 +7,23 @@ mat-sidenav {
   width: 280px;
 }
 
-mat-toolbar {
+mat-toolbar-row {
   height: 48px;
+}
+
+.mat-toolbar-multiple-rows {
+  min-height: 48px;
 }
 
 .petstore__name {
   padding: 15px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  margin-right: 12px;
 }
 
 .btn__close-menu {

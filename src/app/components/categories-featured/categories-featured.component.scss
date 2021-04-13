@@ -5,3 +5,13 @@ body {
     width: 1284px;
     height: 768px;
 }
+
+img {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 0.5px solid #ccc;
+}
+
+h3 {
+    margin-left: 25px;
+}

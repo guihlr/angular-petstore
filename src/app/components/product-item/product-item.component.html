@@ -1,0 +1,39 @@
+<!-- <mat-card>
+    <img [src]="product.featured_image" [alt]="product.name">
+    <mat-card-title>
+        {{product.name}}
+    </mat-card-title>
+</mat-card> -->
+<mat-card>
+
+    <img mat-card-image [src]="product.featured_image">
+
+    <h3>{{product.name}}</h3>
+    <h3>{{product.value | currency:'BRL' }}</h3>
+    <h2>{{product.promotional_value | currency:'BRL' }}</h2>
+    <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+
+        <mat-icon>
+            <!-- // Primeira condição para mostrar uma estrela cheia -->
+            <ng-container *ngIf="product.rating_stars >= 5 ">
+                star
+            </ng-container>
+            <!-- // segunda condição para mostrar uma estrela pela metada -->
+            <ng-container *ngIf="product.rating_stars <= 4 || product.rating_stars >= 4">
+                star_half
+            </ng-container>
+            <!-- // Terceira condição para mostrar uma estrela vazia -->
+            <!-- <ng-container *ngIf="product.rating_stars >= 4 ">
+                star_border
+            </ng-container>
+            <ng-container *ngIf="product.rating_stars == 4">
+                star_border
+            </ng-container>
+            <ng-container *ngIf="product.rating_stars == 5">
+                star_border
+            </ng-container> -->
+
+        </mat-icon>
+
+    </ng-container>
+</mat-card>

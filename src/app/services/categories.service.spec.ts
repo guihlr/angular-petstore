@@ -14,7 +14,7 @@ describe('CategoriesService', () => {
       imports: [HttpClientTestingModule]
     });
 
-    // Inject the http serivice and test controller for each test
+    // Inject the http service and test controller for each test
     httpClient = TestBed.inject(HttpClient);
     httpTestingController = TestBed.inject(HttpTestingController);
     service = TestBed.inject(CategoriesService);

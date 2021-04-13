@@ -1,10 +1,10 @@
 <div class="container">
-    <h1>Categorias em Destaque</h1>
+    <h2>Categorias em destaque</h2>
 
     <div class="row">
-        <div class="col-md-2 category-item" *ngFor="let categorie of categories">
+        <div class="col-4 col-sm-4 col-md-2 col-lg-2 category-item" *ngFor="let categorie of categories">
             <img src="{{categorie.url}}">
-            <h3>{{categorie.name}}</h3>
+            <h3> {{categorie.name}}</h3>
         </div>
     </div>
 
