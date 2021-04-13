@@ -9,7 +9,7 @@ export class CategoriesServiceMock {
                 { id: 'dasdasd', name: 'Ração', description: '', subcategories: ['ração seca'], url: '' },
                 { id: 'dasdasd', name: 'Brinquedos', description: '', subcategories: ['pelucia'], url: '' }
             ]);
-            observer.complete()
+            observer.complete();
         });
     }
-};
+}
