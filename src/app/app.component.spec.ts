@@ -20,8 +20,8 @@ describe('AppComponent', () => {
           MatSidenav,
           MatSidenavContent,
           MatSidenavContainer,
-          MatToolbarRow,
-          MatIcon
+          MatIcon,
+          MatToolbarRow
         )
       ],
     }).compileComponents();
