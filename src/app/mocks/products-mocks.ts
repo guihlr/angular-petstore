@@ -1,5 +1,6 @@
 import { AnimalType, Products } from './../interfaces/products';
 import { Observable } from 'rxjs';
+import { Product } from '../interfaces/product';
 
 export class ProductsServiceMock {
 
@@ -59,4 +60,14 @@ export class ProductsServiceMock {
 
         });
     }
-}
+
+    product!: Product;
+
+    getProduct(id: string): Observable<Product> {
+        return new Observable<Product>(observer => {
+            observer.next(this.product);
+            observer.complete();
+        });
+    };
+};
+

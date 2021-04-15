@@ -1,3 +1,4 @@
+import { MatButtonModule } from '@angular/material/button';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CategoriesFeaturedComponent } from './components/categories-featured/categories-featured.component';
 import { MatCardModule } from '@angular/material/card';
 import { ProductItemComponent } from './components/product-item/product-item.component';
+import { ProductComponent } from './pages/product/product.component';
+import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 
 
 @NgModule({
@@ -19,7 +22,8 @@ import { ProductItemComponent } from './components/product-item/product-item.com
     AppComponent,
     DashboardComponent,
     CategoriesFeaturedComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +34,8 @@ import { ProductItemComponent } from './components/product-item/product-item.com
     MatToolbarModule,
     HttpClientModule,
     MatCardModule,
+    NgxUsefulSwiperModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

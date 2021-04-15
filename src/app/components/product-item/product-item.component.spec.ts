@@ -64,7 +64,7 @@ describe('ProductItemComponent', () => {
     const html = fixture.nativeElement;
     const productName = document.querySelector('mat-card .product-name');
     expect(productName?.textContent).toEqual(`${product.name}`);
-    console.log(`${product.name}`)
+    // console.log(`${product.name}`)
   });
 
   //3 - Verificar se o valor original e o valor promocional estão no HTML
@@ -73,7 +73,7 @@ describe('ProductItemComponent', () => {
     const html = fixture.nativeElement;
     const productValue = document.querySelector('mat-card .product-value');
     expect(productValue?.textContent).toContain(`${product.value}`);
-    console.log(`${product.value}`)
+    // console.log(`${product.value}`)
   });
 
 
@@ -81,7 +81,7 @@ describe('ProductItemComponent', () => {
     const html = fixture.nativeElement;
     const promotionalValue = document.querySelector('mat-card .product-promotional_value');
     expect(promotionalValue?.textContent).toContain(`${product.promotional_value}`);
-    console.log(`${product.promotional_value}`)
+    // console.log(`${product.promotional_value}`)
   });
 
 

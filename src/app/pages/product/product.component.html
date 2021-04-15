@@ -1,0 +1,67 @@
+<div *ngIf="product">
+    <div class="breadcrumbs">
+        <span>dashboard</span> >
+        <span>{{product.animal_type}}</span> >
+        <span>{{product.category}}</span> >
+        <span class="product-name">{{product.name}}</span>
+    </div>
+</div>
+
+<section class="container">
+
+    <swiper [config]="swiperConfig" class="swiper-container col-sm">
+        <div class="swiper-wrapper">
+            <ng-container *ngFor="let image of product.images">
+                <div class="swiper-slide">
+                    <img [src]="image">
+                </div>
+            </ng-container>
+        </div>
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+    </swiper>
+
+    <div class="product_container">
+        <div class="name">
+            <span>
+                {{product.name}}
+            </span>
+        </div>
+        <div class="stars">
+            <span>
+                ({{product.rating_count}})
+                <mat-icon>
+                    star
+                </mat-icon>
+            </span>
+        </div>
+        <div class="description">
+            <span>
+                {{product.description}}
+            </span>
+        </div>
+        <div class="old-value" style="text-decoration: line-through;">
+            <span>
+                {{product.value | currency: 'BRL'}}
+            </span>
+        </div>
+        <div class="promotional-value">
+            <span>
+                {{product.promotional_value | currency: 'BRL'}}
+                Para assinantes
+            </span>
+        </div>
+        <div class="installment-value">
+            <span>
+                {{product.value | currency: 'BRL'}} ou em até {{product.installment_count}}x {{product.value /
+                product.installment_count | currency: 'BRL'}}
+            </span>
+        </div>
+
+    </div>
+
+    <button class="add" mat-raised-button color="primary">adicionar ao carrinho</button>
+    <button class="ass" mat-raised-button color="accent">assinar produto</button>
+
+
+</section>

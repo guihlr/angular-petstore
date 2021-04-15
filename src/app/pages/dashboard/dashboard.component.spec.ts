@@ -1,4 +1,4 @@
-import { ProductsServiceMock } from './../../mocks/products-mock';
+import { ProductsServiceMock } from './../../mocks/products-mocks';
 import { ProductsService } from './../../services/products.service';
 import { ProductItemComponent } from './../../components/product-item/product-item.component';
 import { CategoriesFeaturedComponent } from './../../components/categories-featured/categories-featured.component';
