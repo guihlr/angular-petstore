@@ -16,18 +16,8 @@ export class ProductComponent implements OnInit {
     private route: ActivatedRoute,
   ) { }
 
+
   product!: Product;
-
-  ngOnInit(): void {
-    this.getProduct();
-  }
-
-  getProduct(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.productService.getProduct(`${id}`)
-      .subscribe(product => this.product = product)
-    // console.log(id)
-  };
 
   public swiperConfig: SwiperOptions = {
     direction: 'horizontal', // definição da direção do slider
@@ -37,5 +27,15 @@ export class ProductComponent implements OnInit {
     // Aqui definimos a paginação dele, no caso são as bolinhas que ficam na parte inferior do slide
   };
 
-};
+  ngOnInit(): void {
+    this.getProduct();
+  }
+
+  getProduct(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.productService.getProduct(`${id}`)
+      .subscribe(product => this.product = product);
+    // console.log(id)
+  }
+}
 

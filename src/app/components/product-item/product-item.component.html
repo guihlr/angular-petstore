@@ -1,36 +1,30 @@
-<mat-card [routerLink]="['/product', product.id]">
-    <img [src]="product.featured_image" [alt]="product.name">
-    <mat-card-title>
-        {{product.name}}
-    </mat-card-title>
-    <mat-card-content class="mat-card-content">
-        <div class="stars">
-            <mat-icon class="mat-icon material-icons mat-icon-no-color">
-                star
-            </mat-icon>
-            <mat-icon class="mat-icon material-icons mat-icon-no-color">
-                star
-            </mat-icon>
-            <mat-icon class="mat-icon material-icons mat-icon-no-color">
-                star
-            </mat-icon>
-            <mat-icon class="mat-icon material-icons mat-icon-no-color">
-                star
-            </mat-icon>
-            <mat-icon class="mat-icon material-icons mat-icon-no-color">
-                star
-            </mat-icon>
-        </div>
-        <div class="container-value">
-            <del class="original-value">
-                {{product.value | currency: 'BRL'}}}
-            </del>
-            <div class="value">
-                {{product.promotional_value | currency: 'BRL'}}
+<div *ngIf="product">
+    <mat-card [routerLink]="['/product', product.id]">
+        <img [src]="product.featured_image" [alt]="product.name">
+        <mat-card-title class="product-name">
+            {{product.name}}
+        </mat-card-title>
+        <mat-card-content class="mat-card-content">
+            <div class="stars">
+                <mat-icon class="star-icon mat-icon material-icons mat-icon-no-color"
+                    *ngFor="let star of [1, 2, 3, 4, 5]">
+                    <ng-container *ngIf="product.rating_stars >= star">star</ng-container>
+                    <ng-container *ngIf="star - product.rating_stars == 0.5">star_half</ng-container>
+                    <ng-container *ngIf="star - product.rating_stars > 0.5">star_border</ng-container>
+
+                </mat-icon>
             </div>
-        </div>
-        <div class="installment">
-            {{product.installment_count}}x {{product.value / product.installment_count | currency: 'BRL'}}
-        </div>
-    </mat-card-content>
-</mat-card>
+            <div class="container-value">
+                <del class="original-value">
+                    {{product.value | currency: 'BRL'}}
+                </del>
+                <div class="promotional-value">
+                    {{product.promotional_value | currency: 'BRL'}}
+                </div>
+            </div>
+            <div class="installment">
+                {{product.installment_count}}x {{product.value / product.installment_count | currency: 'BRL'}}
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

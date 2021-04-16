@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { MatCardContent, MatCardTitle } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
 import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
 import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';
@@ -21,7 +22,9 @@ describe('AppComponent', () => {
           MatSidenavContent,
           MatSidenavContainer,
           MatIcon,
-          MatToolbarRow
+          MatToolbarRow,
+          MatCardContent,
+          MatCardTitle
         )
       ],
     }).compileComponents();

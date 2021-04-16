@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
 
   getProductsHighlights(): void {
     this.productsService.getProductsHighlights()
-      .subscribe(products => this.products = products)
+      .subscribe(products => this.products = products);
   }
 
 }

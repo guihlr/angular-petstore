@@ -2,8 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { AnimalType, Product } from '../interfaces/product';
+import { ProductsServiceMock } from '../mocks/products-mocks';
 
 import { ProductService } from './product.service';
+import { ProductsService } from './products.service';
 
 describe('ProductService', () => {
   let service: ProductService;
@@ -12,8 +14,17 @@ describe('ProductService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule]
+      imports: [HttpClientTestingModule],
+      providers: [
+        {
+          provide: ProductsService,
+          useClass: ProductsServiceMock
+        }
+      ]
     });
+    // Inject the http service and test controller for each test
+    httpClient = TestBed.inject(HttpClient);
+    httpTestingController = TestBed.inject(HttpTestingController);
     service = TestBed.inject(ProductService);
   });
 
@@ -22,10 +33,11 @@ describe('ProductService', () => {
       expect(product.name).toEqual('Ração Seca');
     })
 
-    const req = httpTestingController.expectOne('http://petshop-sp.ue.r.appspot.com/v1/product/ID1');
+    const req = httpTestingController.expectOne('https://petshop-sp.ue.r.appspot.com/v1/product/ID1');
 
     expect(req.request.method).toEqual('GET');
 
+    // Se vocẽ tiver um produto declarado no escopo do serviço ou em um arquivo de mock utilize ele
     const product: Product = {
       name: 'Ração Seca',
       description: 'Ração para cachorro',

@@ -1,15 +1,19 @@
+import { HttpClient } from '@angular/common/http';
 import { AnimalType, Products } from './../interfaces/products';
 import { Observable } from 'rxjs';
 import { Product } from '../interfaces/product';
 
 export class ProductsServiceMock {
 
+
+    product!: Product;
+
     getCategories(): Observable<Products[]> {
         return new Observable<Products[]>(observer => {
             observer.next([
                 {
-                    name: "Product",
-                    description: "Product",
+                    name: 'Product',
+                    description: 'Product',
                     value: 204.9,
                     promotional_value: 184.41,
                     featured_image: 'image_url',
@@ -36,8 +40,8 @@ export class ProductsServiceMock {
         return new Observable<Products[]>(observer => {
             observer.next([
                 {
-                    name: "Product",
-                    description: "Product",
+                    name: 'Product',
+                    description: 'Product',
                     value: 204.9,
                     promotional_value: 184.41,
                     featured_image: 'image_url',
@@ -61,13 +65,12 @@ export class ProductsServiceMock {
         });
     }
 
-    product!: Product;
-
     getProduct(id: string): Observable<Product> {
-        return new Observable<Product>(observer => {
+        return new Observable<Products>(observer => {
             observer.next(this.product);
             observer.complete();
         });
-    };
-};
+
+    }
+}
 

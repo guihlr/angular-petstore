@@ -3,7 +3,7 @@
         <span>dashboard</span> >
         <span>{{product.animal_type}}</span> >
         <span>{{product.category}}</span> >
-        <span>{{product.name}}</span>
+        <span class="product-name">{{product.name}}</span>
     </div>
 
 
@@ -27,6 +27,12 @@
                 <h2>{{product.description}}</h2>
                 <div class="stars">
                     <div class="icons">
+                        <mat-icon class="star-icon mat-icon material-icons mat-icon-no-color"
+                            *ngFor="let star of [1, 2, 3, 4, 5]">
+                            <ng-container *ngIf="product.rating_stars >= star">star</ng-container>
+                            <ng-container *ngIf="star - product.rating_stars == 0.5">star_half</ng-container>
+                            <ng-container *ngIf="star - product.rating_stars > 0.5">star_border</ng-container>
+                        </mat-icon>
                         <span class="rating-count">
                             ({{product.rating_count}})
                         </span>

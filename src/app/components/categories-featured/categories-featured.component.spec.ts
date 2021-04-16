@@ -35,12 +35,12 @@ describe('CategoriesFeaturedComponent', () => {
     const fixture = TestBed.createComponent(CategoriesFeaturedComponent);
     fixture.detectChanges();
     const h1 = fixture.nativeElement;
-    expect(h1.querySelector('.container h2').textContent).toContain('Categorias em destaque')
+    expect(h1.querySelector('.container p').textContent).toEqual('Ração');
   });
 
   it('should check category card item count in HTML', () => {
     const html = fixture.nativeElement;
-    expect(html.getElementsByClassName('category-item').length).toEqual(2)
+    expect(html.getElementsByClassName('category-item').length).toEqual(2);
   });
 
   it('should check fist category card name in HTML', () => {
