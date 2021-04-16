@@ -1,53 +1,36 @@
-<!-- <mat-card>
+<mat-card [routerLink]="['/product', product.id]">
     <img [src]="product.featured_image" [alt]="product.name">
     <mat-card-title>
         {{product.name}}
     </mat-card-title>
-</mat-card> -->
-<mat-card [routerLink]="['/product', product.id]">
-    <img mat-card-image [src]="product.featured_image">
-
-    <div class="product-name">
-        <h3>{{product.name}}</h3>
-    </div>
-
-    <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
-
-        <mat-icon>
-            <!-- // Primeira condição para mostrar uma estrela cheia -->
-            <ng-container *ngIf="product.rating_stars >= 4.5 ">
+    <mat-card-content class="mat-card-content">
+        <div class="stars">
+            <mat-icon class="mat-icon material-icons mat-icon-no-color">
                 star
-            </ng-container>
-            <!-- // segunda condição para mostrar uma estrela pela metada -->
-            <ng-container *ngIf="product.rating_stars >=3.5">
+            </mat-icon>
+            <mat-icon class="mat-icon material-icons mat-icon-no-color">
                 star
-            </ng-container>
-            <!-- // Terceira condição para mostrar uma estrela vazia -->
-            <!-- <ng-container *ngIf="product.rating_stars >= 2.5 ">
-                star_half
-            </ng-container>
-            <ng-container *ngIf="product.rating_stars >= 1.5">
-                star_border
-            </ng-container>
-            <ng-container *ngIf="product.rating_stars <= 1">
-                star_border
-            </ng-container> -->
-        </mat-icon>
-    </ng-container>
-
-    <div class="product_container">
-        <div class="old-value" style="text-decoration: line-through;">
-            <span>{{product.value | currency: 'BRL'}}</span>
+            </mat-icon>
+            <mat-icon class="mat-icon material-icons mat-icon-no-color">
+                star
+            </mat-icon>
+            <mat-icon class="mat-icon material-icons mat-icon-no-color">
+                star
+            </mat-icon>
+            <mat-icon class="mat-icon material-icons mat-icon-no-color">
+                star
+            </mat-icon>
         </div>
-        <div class="promotional-value">
-            <span>{{product.promotional_value | currency: 'BRL'}}</span>
+        <div class="container-value">
+            <del class="original-value">
+                {{product.value | currency: 'BRL'}}}
+            </del>
+            <div class="value">
+                {{product.promotional_value | currency: 'BRL'}}
+            </div>
         </div>
-        <div class="installment-value">
-            <span>{{product.installment_count}}x {{product.value / product.installment_count | currency:
-                'BRL'}}</span>
+        <div class="installment">
+            {{product.installment_count}}x {{product.value / product.installment_count | currency: 'BRL'}}
         </div>
-
-    </div>
-
-
+    </mat-card-content>
 </mat-card>
