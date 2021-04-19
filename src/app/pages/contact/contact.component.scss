@@ -1,17 +1,34 @@
+.container {
+  .contact-form {
+    display: grid;
+    max-width: 80%;
+    margin: auto;
+    padding-top: 30px;
+    margin-bottom: 60px;
+  }
+  mat-form-field {
+    margin-bottom: 5px;
+    background-color: rgba(0,0,0,.04);
+    height: 70%;
+  }
+
+  button {
+   border: none;
+  }
+}
 
 
-
-@media (min-width: 768px) {
-    .container, .container-md, .container-sm{
-      max-width: 720px;    
-    }
+// @media (min-width: 768px) {
+//     .container, .container-md, .container-sm{
+//       max-width: 720px;    
+//     }
     
        
   
-  }
-  @media (min-width: 576px) {
-    .container, .container-sm{
-      max-width: 540px;
-    }
+//   }
+//   @media (min-width: 576px) {
+//     .container, .container-sm{
+//       max-width: 540px;
+//     }
  
-}
+// }

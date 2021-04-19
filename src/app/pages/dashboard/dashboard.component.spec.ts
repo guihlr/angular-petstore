@@ -1,3 +1,4 @@
+import { FooterComponent } from './../../components/footer/footer.component';
 import { ProductsServiceMock } from './../../mocks/products-mocks';
 import { ProductsService } from './../../services/products.service';
 import { ProductItemComponent } from './../../components/product-item/product-item.component';

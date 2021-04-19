@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCard, MatCardContent, MatCardTitle } from '@angular/material/card';
-import { MatCardModule } from '@angular/material/card'
 import { MatIcon } from '@angular/material/icon';
 import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
 import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';
@@ -16,8 +15,7 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         FormsModule,
-        ReactiveFormsModule,
-        MatCardModule
+        ReactiveFormsModule
       ],
       declarations: [
         AppComponent,

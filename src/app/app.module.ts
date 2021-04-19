@@ -19,6 +19,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input'
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ProductsComponent } from './pages/products/products.component'
 
 
 
@@ -31,6 +34,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProductComponent,
     FooterComponent,
     ContactComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatFormFieldModule,
     FormsModule,
-    ReactiveFormsModule
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

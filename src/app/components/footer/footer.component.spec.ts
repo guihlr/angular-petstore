@@ -1,9 +1,11 @@
+import { MockComponent, MockComponents } from 'ng-mocks';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ParametersService } from './../../services/parameters.service';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FooterComponent } from './footer.component';
 import { ProductsServiceMock } from 'src/app/mocks/products-mocks';
+import { MatCard } from '@angular/material/card';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
@@ -16,7 +18,10 @@ describe('FooterComponent', () => {
         ReactiveFormsModule
       ],
       declarations: [
-        FooterComponent
+        FooterComponent,
+        MockComponents(
+          MatCard
+        )
       ],
       providers: [
         {
