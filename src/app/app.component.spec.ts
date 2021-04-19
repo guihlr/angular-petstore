@@ -1,5 +1,7 @@
 import { TestBed } from '@angular/core/testing';
-import { MatCardContent, MatCardTitle } from '@angular/material/card';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCard, MatCardContent, MatCardTitle } from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card'
 import { MatIcon } from '@angular/material/icon';
 import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
 import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';
@@ -12,7 +14,10 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatCardModule
       ],
       declarations: [
         AppComponent,
@@ -24,7 +29,8 @@ describe('AppComponent', () => {
           MatIcon,
           MatToolbarRow,
           MatCardContent,
-          MatCardTitle
+          MatCardTitle,
+          MatCard
         )
       ],
     }).compileComponents();

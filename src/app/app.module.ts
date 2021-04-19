@@ -15,6 +15,11 @@ import { MatCardModule } from '@angular/material/card';
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import { ProductComponent } from './pages/product/product.component';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
+import { FooterComponent } from './components/footer/footer.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -23,7 +28,9 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
     DashboardComponent,
     CategoriesFeaturedComponent,
     ProductItemComponent,
-    ProductComponent
+    ProductComponent,
+    FooterComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +42,10 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
     HttpClientModule,
     MatCardModule,
     NgxUsefulSwiperModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

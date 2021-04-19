@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { Parameters } from './../interfaces/parameters';
 import { AnimalType, Products } from './../interfaces/products';
 import { Observable } from 'rxjs';
 import { Product } from '../interfaces/product';
+
 
 export class ProductsServiceMock {
 
@@ -72,5 +73,31 @@ export class ProductsServiceMock {
         });
 
     }
+
+    getParameters(): Observable<Parameters[]> {
+        return new Observable<Parameters[]>(observer => {
+            observer.next([
+                {
+                    company_name: 'company',
+                    trademark: 'trademark',
+                    adress: 'adress',
+                    adress_complement: 'adress_complement',
+                    city: 'city',
+                    state: 'state',
+                    zip_code: 'zip_code',
+                    social_networks: [],
+                    account: 'account',
+                    name: 'name',
+                    phones: [],
+                    number: 'number',
+                    type: 'type',
+                    country_code: 'country_code'
+                },]);
+            observer.complete();
+        });
+    }
+
+
 }
+
 

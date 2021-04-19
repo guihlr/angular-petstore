@@ -19,3 +19,19 @@
         color: #FFBF3F;
     }
 }
+
+
+@media (min-width: 768px) {
+    .container, .container-md, .container-sm{
+      max-width: 720px;    
+    }
+    
+       
+  
+  }
+  @media (min-width: 576px) {
+    .container, .container-sm{
+      max-width: 540px;
+    }
+ 
+}

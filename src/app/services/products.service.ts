@@ -17,11 +17,11 @@ export class ProductsService {
       this.http.get<ProductsHighlights[]>(`${environment.apiUrl}v1/products-highlights`).subscribe(productsHighlights => {
         observer.next(productsHighlights);
         observer.complete();
-        console.log(productsHighlights[0].name);
+        // console.log(productsHighlights[0].name);
       },
         // se der algum erro na req ira ser chamado ese callback
         () => {
-          observer.error('error_on_get_products_highlights');
+          observer.error('error_on_getProductsHighlights');
           observer.complete();
         }
       );

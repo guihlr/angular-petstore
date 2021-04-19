@@ -37,7 +37,7 @@ describe('ProductService', () => {
 
     expect(req.request.method).toEqual('GET');
 
-    // Se vocẽ tiver um produto declarado no escopo do serviço ou em um arquivo de mock utilize ele
+
     const product: Product = {
       name: 'Ração Seca',
       description: 'Ração para cachorro',

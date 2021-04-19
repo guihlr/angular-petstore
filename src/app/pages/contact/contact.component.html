@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="col-12">
+        <form class="contact-form" [formGroup]="formGroup">
+            <h1 class="title">Contato</h1>
+            <mat-form-field class="name" appearence="fill">
+                <mat-label>Nome</mat-label>
+                <input matInput placeholder="nome" formControlName="name">
+            </mat-form-field><br>
+            <mat-form-field class="email" appearence="fill">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="email" formControlName="email">
+            </mat-form-field><br>
+            <mat-form-field class="telefone" appearence="fill">
+                <mat-label>Telefone</mat-label>
+                <input matInput placeholder="telefone" formControlName="phone">
+            </mat-form-field><br>
+            <mat-form-field class="mensagem" appearence="fill">
+                <mat-label>Mensagem</mat-label>
+                <input matInput placeholder="mensagem" formControlName="message">
+            </mat-form-field>
+
+        </form>
+    </div>
+</div>
