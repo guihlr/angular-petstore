@@ -16,9 +16,10 @@ export class AppComponent {
   title = 'Petstore';
   menus = [
     { 'name': 'Home', 'router': '/' },
-    { 'name': 'Contato', 'router': '/contact' }
+    { 'name': 'Contato', 'router': '/contact' },
+    { 'name': 'Produtos', 'router': '/products' }
 
-  ]
+  ];
 
   showPage(pageName: string, sidenav: MatSidenav) {
     this.router.navigate([pageName]);

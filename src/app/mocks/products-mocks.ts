@@ -1,16 +1,19 @@
 import { Parameters } from './../interfaces/parameters';
-import { AnimalType, Products } from './../interfaces/products';
+import { AnimalType, Products, ProductsGetResponse } from './../interfaces/products';
 import { Observable } from 'rxjs';
 import { Product } from '../interfaces/product';
 
 
-export class ProductsServiceMock {
+export class ProductsServiceMock
+{
 
 
     product!: Product;
 
-    getCategories(): Observable<Products[]> {
-        return new Observable<Products[]>(observer => {
+    getCategories (): Observable<Products[]>
+    {
+        return new Observable<Products[]>(observer =>
+        {
             observer.next([
                 {
                     name: 'Product',
@@ -32,13 +35,15 @@ export class ProductsServiceMock {
                     url: '/url',
                     created_at: '2021-04-12 21:28:35.881119+00:00',
                     id: 'EJf7MU4hES59rlLMJrdH'
-                },]);
+                }, ]);
             observer.complete();
         });
     }
 
-    getProductsHighlights(): Observable<Products[]> {
-        return new Observable<Products[]>(observer => {
+    getProductsHighlights (): Observable<Products[]>
+    {
+        return new Observable<Products[]>(observer =>
+        {
             observer.next([
                 {
                     name: 'Product',
@@ -60,22 +65,26 @@ export class ProductsServiceMock {
                     url: '/url',
                     created_at: '2021-04-12 21:28:35.881119+00:00',
                     id: 'EJf7MU4hES59rlLMJrdH'
-                },]);
+                }, ]);
             observer.complete();
 
         });
     }
 
-    getProduct(id: string): Observable<Product> {
-        return new Observable<Products>(observer => {
+    getProduct (id: string): Observable<Product>
+    {
+        return new Observable<Products>(observer =>
+        {
             observer.next(this.product);
             observer.complete();
         });
 
     }
 
-    getParameters(): Observable<Parameters[]> {
-        return new Observable<Parameters[]>(observer => {
+    getParameters (): Observable<Parameters[]>
+    {
+        return new Observable<Parameters[]>(observer =>
+        {
             observer.next([
                 {
                     company_name: 'company',
@@ -92,7 +101,64 @@ export class ProductsServiceMock {
                     number: 'number',
                     type: 'type',
                     country_code: 'country_code'
-                },]);
+                }, ]);
+            observer.complete();
+        });
+    }
+
+    products: Array<Product> = [
+        {
+            name: "Product",
+            description: "Product",
+            value: 204.9,
+            promotional_value: 184.41,
+            featured_image: "image_url",
+            images: [],
+            videos: [],
+            rating_stars: 5,
+            rating_count: 424,
+            installment_available: true,
+            installment_count: 2,
+            featured: true,
+            category: "Medicina e Sa\u00fade",
+            subcategory: "Antipulgas e Carrapatos",
+            animal_type: AnimalType.Dog,
+            url: "/url",
+            created_at: "2021-04-12 21:28:35.881119+00:00",
+            id: "EJf7MU4hES59rlLMJrdH",
+            status: 'active'
+        },
+        {
+            name: "Product2",
+            description: "Product2",
+            value: 204.9,
+            promotional_value: 184.41,
+            featured_image: "image_url",
+            images: [],
+            videos: [],
+            rating_stars: 5,
+            rating_count: 424,
+            installment_available: true,
+            installment_count: 2,
+            featured: true,
+            category: "Medicina e Sa\u00fade",
+            subcategory: "Antipulgas e Carrapatos",
+            animal_type: AnimalType.Dog,
+            url: "/url",
+            created_at: "2021-04-12 21:28:35.881119+00:00",
+            id: "EJf7MU4hES59rlLMJrdH",
+            status: 'string'
+        }
+    ];
+    getProducts ()
+    {
+        return new Observable<ProductsGetResponse>(observer =>
+        {
+            observer.next({
+                products: [ this.product ],
+                cursor: ''
+            }
+            );
             observer.complete();
         });
     }

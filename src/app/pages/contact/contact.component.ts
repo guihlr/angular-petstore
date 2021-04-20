@@ -17,7 +17,7 @@ export class ContactComponent implements OnInit {
 
   public formGroup!: FormGroup;
   public EMAIL_REGEXP: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  public PHONE_REGEXP: RegExp = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g
+  public PHONE_REGEXP: RegExp = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g;
 
 
   ngOnInit(): void {
@@ -29,7 +29,7 @@ export class ContactComponent implements OnInit {
       //Apresentar mensagem de email enviado com sucesso
       this.snackBar.open('Formulário enviado com sucesso!', 'Undo', { duration: 3000 });
       //Deixar o formulário em branco
-      this.formGroup.reset(this.formGroup)
+      this.formGroup.reset(this.formGroup);
     }
     else
       //Apresentar mensagem de erro

@@ -7,19 +7,24 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class ProductService
+{
 
 
-  constructor(private http: HttpClient) { }
+  constructor (private http: HttpClient) { }
 
-  getProduct(id: string): Observable<Product> {
-    return new Observable<Product>(observer => {
+  getProduct (id: string): Observable<Product>
+  {
+    return new Observable<Product>(observer =>
+    {
       this.http.get<Product>(`${environment.apiUrl}v1/product/${id}`).subscribe(
-        product => {
+        product =>
+        {
           observer.next(product);
           observer.complete();
         },
-        error => {
+        error =>
+        {
           observer.next(error);
           observer.complete();
         }
