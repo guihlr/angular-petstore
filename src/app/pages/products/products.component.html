@@ -1,18 +1,17 @@
 <!--Sessão referente aos produtos-->
 <section class="container grid products" *ngIf="products">
-    <div class="row">
-        <!--Coluna refente ao titulo-->
-        <div class="col-12">
-            <h2 class="title">Lista de Produtos</h2>
-        </div>
-        <!--Loop dos produtos-->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let product of products">
-            <!--Aqui chamamos o componente app-produtct-item-->
-            <app-product-item [product]="product">{{product.name}}
-                {{product.url}}
-
-            </app-product-item>
-        </div>
+  <div class="row">
+    <!--Coluna refente ao titulo-->
+    <div class="col-12">
+      <h2 class="title">Lista de Produtos</h2>
     </div>
-
+    <!--Loop dos produtos-->
+    <div
+      class="col-12 col-sm-6 col-md-4 col-lg-3"
+      *ngFor="let product of products"
+    >
+      <!--Aqui chamamos o componente app-produtct-item-->
+      <app-product-item [product]="product"> </app-product-item>
+    </div>
+  </div>
 </section>

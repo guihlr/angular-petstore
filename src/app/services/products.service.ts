@@ -33,7 +33,7 @@ export class ProductsService {
     });
   }
 
-  getProducts(): Observable<ProductsGetResponse> {
+  getProducts() {
     return new Observable<ProductsGetResponse>((observer) => {
       // importando o enviroment da url da api
       this.http
@@ -44,7 +44,6 @@ export class ProductsService {
             observer.complete();
           },
           (error) => {
-            observer.error('error_on_get_products');
             observer.next(error);
             observer.complete();
           }
