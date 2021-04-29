@@ -1,15 +1,74 @@
 .breadcrumbs {
-    padding-top: 8px;
-    margin-left: 16px;
+  margin: 8px 20px 20px;
+  color: #777;
+}
+
+.price-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .swiper-container {
-    height: 270px;
-    max-width: 230px;
-    .swiper-slide {
-        img {
-            max-width: 100%;
-        }
+  margin-top: 20px;
+  height: 270px;
+  max-width: 230px;
+  .swiper-slide {
+    img {
+      max-width: 100%;
     }
+  }
 }
 
+.add {
+  background-color: #7728ab;
+  border: none;
+  height: 3.2rem;
+  width: 100%;
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.subscribe {
+  background-color: #f24783;
+  border: none;
+  height: 3.2rem;
+  width: 100%;
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.star-icon {
+  color: #ffbf3f;
+  font-size: 18px;
+  height: 18px;
+  width: 18px;
+}
+.rating-count {
+  color: #ffbf3f;
+}
+.price-container .promotional-value {
+  color: #f24783;
+  font-size: 2rem;
+}
+.subscribers {
+  color: #f24783;
+  font-size: medium;
+  font-size: 1.2rem;
+}
+.price {
+  color: #7728ab;
+  font-size: 2rem;
+}
+.installment {
+  color: #929292;
+  font-size: 16px;
+}

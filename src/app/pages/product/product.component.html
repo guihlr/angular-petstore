@@ -1,8 +1,8 @@
 <ng-container *ngIf="product">
   <div class="breadcrumbs">
-    <span>dashboard</span> > <span>{{ product.animal_type }}</span> >
-    <span>{{ product.category }}</span> >
-    <span class="product-name">{{ product.name }}</span>
+    <span> dashboard</span> > <span> {{ product.animal_type }}</span> >
+    <span> {{ product.category }}</span> >
+    <span class="product-name"> {{ product.name }}</span>
   </div>
 
   <section class="container product-container">
@@ -22,6 +22,8 @@
       </div>
 
       <div class="product-details col-12 col-sm-12 col-md-5 col-lg-5">
+        <h2 class="product__name">{{ product.name }}</h2>
+
         <div class="stars">
           <div class="icons">
             <mat-icon
@@ -38,7 +40,8 @@
                 >star_border</ng-container
               >
             </mat-icon>
-            <span class="rating-count"> ({{ product.rating_count }}) </span>
+
+            <span class="rating-count"> ({{ product.rating_count }})</span>
           </div>
           <div class="description">
             {{ product.description }}
@@ -48,17 +51,26 @@
 
       <div class="product-prices col-12 col-sm-12 col-md-4 col-lg-4">
         <div class="price-container">
-          <div class="value-without-promotion col-md-12">
+          <div
+            class="value-without-promotion col-md-12"
+            *ngIf="product.promotional_value"
+          >
             <small>
               <del>
                 {{ product.value | currency: "BRL" }}
               </del>
             </small>
           </div>
-          <div class="price promotional-value col-6 col-sm-6 col-md-6 col-lg-6">
+          <div
+            class="price promotional-value col-6 col-sm-6 col-md-6 col-lg-6"
+            *ngIf="product.promotional_value"
+          >
             {{ product.promotional_value | currency: "BRL" }}
           </div>
-          <div class="subscribers col-6 col-sm-6 col-md-6 col-lg-6">
+          <div
+            class="subscribers col-6 col-sm-6 col-md-6 col-lg-6"
+            *ngIf="product.promotional_value"
+          >
             Para assinantes
           </div>
         </div>
@@ -67,14 +79,21 @@
           <div class="price col-6 col-sm-6 col-md-6 col-lg-6">
             {{ product.value | currency: "BRL" }}
           </div>
-          <div class="col-6 col-sm-6 col-md-6 col-lg-6 installment">
+          <div
+            class="col-6 col-sm-6 col-md-6 col-lg-6 installment"
+            *ngIf="product.installment_count"
+          >
             ou em até {{ product.installment_count }}x
             {{ product.value / product.installment_count | currency: "BRL" }}
           </div>
         </div>
 
-        <button mat-raised-button color="primary">adicionar ao carrinho</button>
-        <button mat-raised-button color="accent">assinar produto</button>
+        <button class="add" mat-raised-button color="primary">
+          adicionar ao carrinho
+        </button>
+        <button class="subscribe" mat-raised-button color="accent">
+          assinar produto
+        </button>
       </div>
     </div>
   </section>
