@@ -20,14 +20,14 @@
         </mat-icon>
       </div>
       <div class="container-value">
-        <del class="original-value">
+        <del class="original-value" *ngIf="product.promotional_value">
           {{ product.value | currency: "BRL" }}
         </del>
         <div class="promotional-value">
-          {{ product.promotional_value | currency: "BRL" }}
+          {{ product.promotional_value || product.value | currency: "BRL" }}
         </div>
       </div>
-      <div class="installment">
+      <div class="installment" *ngIf="product.installment_count">
         {{ product.installment_count }}x
         {{ product.value / product.installment_count | currency: "BRL" }}
       </div>
