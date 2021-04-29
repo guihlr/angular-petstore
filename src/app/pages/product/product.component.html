@@ -1,79 +1,81 @@
 <ng-container *ngIf="product">
-    <div class="breadcrumbs">
-        <span>dashboard</span> >
-        <span>{{product.animal_type}}</span> >
-        <span>{{product.category}}</span> >
-        <span class="product-name">{{product.name}}</span>
-    </div>
+  <div class="breadcrumbs">
+    <span>dashboard</span> > <span>{{ product.animal_type }}</span> >
+    <span>{{ product.category }}</span> >
+    <span class="product-name">{{ product.name }}</span>
+  </div>
 
+  <section class="container product-container">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+        <swiper [config]="swiperConfig" class="swiper-container col-sm">
+          <div class="swiper-wrapper">
+            <ng-container *ngFor="let image of product.images">
+              <div class="swiper-slide">
+                <img [src]="image" />
+              </div>
+            </ng-container>
+          </div>
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
+        </swiper>
+      </div>
 
-    <section class="container product-container">
-        <div class="row">
-            <div class="col-12 col-sm-12 col-md-3 col-lg-3">
-                <swiper [config]="swiperConfig" class="swiper-container col-sm">
-                    <div class="swiper-wrapper">
-                        <ng-container *ngFor="let image of product.images">
-                            <div class="swiper-slide">
-                                <img [src]="image">
-                            </div>
-                        </ng-container>
-                    </div>
-                    <!-- Pagination -->
-                    <div class="swiper-pagination"></div>
-                </swiper>
-            </div>
-
-            <div class="product-details col-12 col-sm-12 col-md-5 col-lg-5">
-                <h2>{{product.description}}</h2>
-                <div class="stars">
-                    <div class="icons">
-                        <mat-icon class="star-icon mat-icon material-icons mat-icon-no-color"
-                            *ngFor="let star of [1, 2, 3, 4, 5]">
-                            <ng-container *ngIf="product.rating_stars >= star">star</ng-container>
-                            <ng-container *ngIf="star - product.rating_stars == 0.5">star_half</ng-container>
-                            <ng-container *ngIf="star - product.rating_stars > 0.5">star_border</ng-container>
-                        </mat-icon>
-                        <span class="rating-count">
-                            ({{product.rating_count}})
-                        </span>
-                    </div>
-                    <div class="description">
-                        {{product.description}}
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-prices col-12 col-sm-12 col-md-4 col-lg-4">
-                <div class="price-container">
-                    <div class="value-without-promotion col-md-12">
-                        <small>
-                            <del>
-                                {{product.value | currency: 'BRL'}}
-                            </del>
-                        </small>
-                    </div>
-                    <div class="price promotional-value col-6 col-sm-6 col-md-6 col-lg-6">
-                        {{product.promotional_value | currency: 'BRL'}}
-                    </div>
-                    <div class="subscribers col-6 col-sm-6 col-md-6 col-lg-6">
-                        Para assinantes
-                    </div>
-                </div>
-
-
-                <div class="price-container">
-                    <div class="price col-6 col-sm-6 col-md-6 col-lg-6">
-                        {{product.value | currency: 'BRL'}}
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 installment">
-                        ou em até {{product.installment_count}}x {{product.value / product.installment_count | currency:
-                        'BRL'}}
-                    </div>
-                </div>
-
-                <button mat-raised-button color="primary">adicionar ao carrinho</button>
-                <button mat-raised-button color="accent">assinar produto</button>
-            </div>
+      <div class="product-details col-12 col-sm-12 col-md-5 col-lg-5">
+        <div class="stars">
+          <div class="icons">
+            <mat-icon
+              class="star-icon mat-icon material-icons mat-icon-no-color"
+              *ngFor="let star of [1, 2, 3, 4, 5]"
+            >
+              <ng-container *ngIf="product.rating_stars >= star"
+                >star</ng-container
+              >
+              <ng-container *ngIf="star - product.rating_stars == 0.5"
+                >star_half</ng-container
+              >
+              <ng-container *ngIf="star - product.rating_stars > 0.5"
+                >star_border</ng-container
+              >
+            </mat-icon>
+            <span class="rating-count"> ({{ product.rating_count }}) </span>
+          </div>
+          <div class="description">
+            {{ product.description }}
+          </div>
         </div>
-    </section>
+      </div>
+
+      <div class="product-prices col-12 col-sm-12 col-md-4 col-lg-4">
+        <div class="price-container">
+          <div class="value-without-promotion col-md-12">
+            <small>
+              <del>
+                {{ product.value | currency: "BRL" }}
+              </del>
+            </small>
+          </div>
+          <div class="price promotional-value col-6 col-sm-6 col-md-6 col-lg-6">
+            {{ product.promotional_value | currency: "BRL" }}
+          </div>
+          <div class="subscribers col-6 col-sm-6 col-md-6 col-lg-6">
+            Para assinantes
+          </div>
+        </div>
+
+        <div class="price-container">
+          <div class="price col-6 col-sm-6 col-md-6 col-lg-6">
+            {{ product.value | currency: "BRL" }}
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6 installment">
+            ou em até {{ product.installment_count }}x
+            {{ product.value / product.installment_count | currency: "BRL" }}
+          </div>
+        </div>
+
+        <button mat-raised-button color="primary">adicionar ao carrinho</button>
+        <button mat-raised-button color="accent">assinar produto</button>
+      </div>
+    </div>
+  </section>
 </ng-container>

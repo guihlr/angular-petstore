@@ -14,11 +14,10 @@ describe('CategoriesFeaturedComponent', () => {
       providers: [
         {
           provide: CategoriesService,
-          useClass: CategoriesServiceMock
-        }
-      ]
-    })
-      .compileComponents();
+          useClass: CategoriesServiceMock,
+        },
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -46,8 +45,9 @@ describe('CategoriesFeaturedComponent', () => {
   it('should check fist category card name in HTML', () => {
     const html = fixture.nativeElement;
     // console.log(html.getElementsByClassName('category-item').item(0));
-    expect(html.getElementsByClassName('category-item').item(0).textContent).toContain('Ração');
+    expect(
+      html.getElementsByClassName('category-item').item(0).textContent
+    ).toContain('Ração');
     // expect(html.getElementsByClassName('category-item').[0].textContent).toContain('Ração')
   });
-
 });
